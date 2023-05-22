@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControlEspermatozoide : MonoBehaviour
 {
@@ -8,11 +9,16 @@ public class ControlEspermatozoide : MonoBehaviour
     private bool estaArrastrandose = false; //Indica si el objeto se está arrastrando
     public float rotacionVelocidad = 10f; //Velocidad de rotación del objeto
     private Vector3 posicionInicialCursor; //Posición inicial del cursor al hacer clic
+    public List<MostrarGanaste> mostrarGanaste;
     private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        foreach (MostrarGanaste elemento in mostrarGanaste)
+        {
+            elemento.Ocultar();
+        }
     }
 
     void FixedUpdate()
@@ -56,6 +62,13 @@ public class ControlEspermatozoide : MonoBehaviour
         {
             velocidad += 2f;
             Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Meta"))
+        {
+            foreach (MostrarGanaste elemento in mostrarGanaste)
+            {
+                elemento.Mostrar();
+            }
         }
     }
 }
