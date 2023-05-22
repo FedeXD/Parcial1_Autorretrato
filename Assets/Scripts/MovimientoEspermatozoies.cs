@@ -14,7 +14,7 @@ public class MovimientoEspermatozoies : MonoBehaviour
     private void Start()
     {
         velocidadActual = velocidadInicial;
-        InvokeRepeating(nameof(AumentarVelocidad), 5f, 5f);
+        InvokeRepeating(nameof(AumentarVelocidad), 10f, 10f);
     }
 
     private void AumentarVelocidad()

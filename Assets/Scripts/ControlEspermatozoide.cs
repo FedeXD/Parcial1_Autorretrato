@@ -8,7 +8,7 @@ public class ControlEspermatozoide : MonoBehaviour
     private bool estaArrastrandose = false; //Indica si el objeto se está arrastrando
     public float rotacionVelocidad = 10f; //Velocidad de rotación del objeto
     private Vector3 posicionInicialCursor; //Posición inicial del cursor al hacer clic
-    private Rigidbody rb; 
+    private Rigidbody rb;
 
     void Start()
     {
