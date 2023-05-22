@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class camaraSeguir : MonoBehaviour
 {
-    public Transform target; // Referencia al objeto que seguirá la cámara
-    public Vector3 offset = new Vector3(0, 10, 0); // Desplazamiento de la cámara con respecto al objeto
-    public float smoothSpeed = 0.125f; // Velocidad de suavizado del seguimiento de la cámara
-    public float targetHeight = 10f; // Altura a la que la cámara apuntará
+    public Transform objetivo; //Objeto que va a seguir la cámara
+    public Vector3 offset = new Vector3(0, 10, 0); //Desplazamiento de la cámara con respecto al objeto
+    public float velocidadSuave = 0.125f; // Velocidad de suavizado del seguimiento de la cámara
+    public float alturaObjetivo = 10f; // Altura a la que la cámara apuntará
     void LateUpdate()
     {
-        Vector3 desiredPosition = target.position + new Vector3(offset.x, targetHeight, offset.z);
+        Vector3 desiredPosition = objetivo.position + new Vector3(offset.x, alturaObjetivo, offset.z);
 
-        // Interpola suavemente la posición actual de la cámara hacia la posición deseada
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        //Interpola suavemente la posición actual de la cámara hacia la posición deseada
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, velocidadSuave);
 
-        transform.position = smoothedPosition; // Actualiza la posición de la cámara
-        transform.LookAt(target); // Hace que la cámara mire hacia el objeto que está siguiendo
+        transform.position = smoothedPosition; //Actualiza la posición de la cámara
+        transform.LookAt(objetivo); //Hace que la cámara mire hacia el objeto que está siguiendo
     }
 
 }
