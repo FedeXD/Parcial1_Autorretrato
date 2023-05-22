@@ -48,8 +48,14 @@ public class ControlEspermatozoide : MonoBehaviour
         {
             rb.velocity = Vector3.zero; //Detiene el movimiento si no se está arrastrando
         }
+    }
 
-        
-
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Powerup")) 
+        {
+            velocidad += 2f;
+            Destroy(other.gameObject);
+        }
     }
 }
