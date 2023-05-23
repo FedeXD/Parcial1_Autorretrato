@@ -9,6 +9,7 @@ TagManager:
   - Meta
   - Piso
   - Letra
+  - Enemigo
   layers:
   - Default
   - TransparentFX
