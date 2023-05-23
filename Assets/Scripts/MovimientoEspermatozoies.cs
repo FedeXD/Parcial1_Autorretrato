@@ -9,13 +9,17 @@ public class MovimientoEspermatozoies : MonoBehaviour
     public float distanciaDeteccion = 2f; // Distancia para detectar otros espermatozoides
     public float distanciaEvasion = 3f; // Distancia para evadir otros espermatozoides
     public float evasionForce = 10f; // Fuerza de evasión
+    public List<MostrarGanaste> mostrarGanaste;
     int index = 0;
-    public bool seRepite;
     private float velocidadActual;
     private void Start()
     {
         velocidadActual = velocidadInicial;
         InvokeRepeating(nameof(AumentarVelocidad), 10f, 10f);
+        foreach (MostrarGanaste elemento in mostrarGanaste)
+        {
+            elemento.Ocultar();
+        }
     }
 
     private void AumentarVelocidad()
@@ -53,9 +57,9 @@ public class MovimientoEspermatozoies : MonoBehaviour
             }
             else
             {
-                if (seRepite)
+                foreach (MostrarGanaste elemento in mostrarGanaste)
                 {
-                    index = 0;
+                    elemento.Mostrar();
                 }
             }
         }
