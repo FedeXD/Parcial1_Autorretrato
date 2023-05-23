@@ -5,8 +5,9 @@ using UnityEngine;
 public class MovimientoCubo : MonoBehaviour
 {
     public float speed = 5f; // Velocidad de movimiento del cubo
-    public float jumpForce = 5f;         // Fuerza de salto del cubo
-    public bool canJump = true;          // Indicador de si el cubo puede saltar
+    public float jumpForce = 5f; // Fuerza de salto del cubo
+    public bool canJump = true; // Indicador de si el cubo puede saltar
+    public Transform camara; // Objeto de seguimiento de la cámara
     private Rigidbody rb;
 
     private void Start()
@@ -16,7 +17,7 @@ public class MovimientoCubo : MonoBehaviour
 
     private void Update()
     {
-        if (canJump && Input.GetKeyDown(KeyCode.W))  // Si el cubo puede saltar y se presiona el botón de salto
+        if (canJump && Input.GetKeyDown(KeyCode.W)) // Si el cubo puede saltar y se presiona el botón de salto
         {
             Jump();  // Llamar a la función de salto
         }
@@ -29,6 +30,15 @@ public class MovimientoCubo : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, 0f, 0f); // Crear un vector de movimiento
 
         rb.velocity = new Vector3(movement.x * speed, rb.velocity.y, 0f);  // Aplicar la velocidad al Rigidbody del cubo, conservando la velocidad vertical
+
+        //Actualiza la posición de la cámara para seguir al jugador
+        if (camara != null)
+        {
+            Vector3 posicionCamara = camara.position;
+            posicionCamara.x = transform.position.x;
+            posicionCamara.y = transform.position.y;
+            Camera.main.transform.position = posicionCamara;
+        }
     }
 
     private void Jump()
