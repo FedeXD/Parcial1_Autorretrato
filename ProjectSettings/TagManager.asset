@@ -7,11 +7,12 @@ TagManager:
   - Powerup
   - Espermatozoide
   - Meta
+  - Piso
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Suelo
   - Water
   - UI
   - 
