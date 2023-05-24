@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2748345550577814515}
   - component: {fileID: 8510782408846097037}
   - component: {fileID: 8510782408846097036}
+  - component: {fileID: -1145089623187938570}
   m_Layer: 0
   m_Name: R
-  m_TagString: Letra
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,4 +128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec0d0995a3c7834cb7a8ffb0dc73497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letra: {fileID: 0}
+  letraText: {fileID: 0}
+--- !u!114 &-1145089623187938570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748345550577814516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b64f11345afd24cb77ef5352201238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

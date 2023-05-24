@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 2710121391869432457}
   - component: {fileID: 2710121391869432456}
   - component: {fileID: 6236590459841866062}
+  - component: {fileID: -2219153812526268882}
+  - component: {fileID: 6718194500149633378}
   m_Layer: 0
   m_Name: G
-  m_TagString: Letra
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,3 +116,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2219153812526268882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2710121391869432455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b64f11345afd24cb77ef5352201238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6718194500149633378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2710121391869432455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b64f11345afd24cb77ef5352201238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

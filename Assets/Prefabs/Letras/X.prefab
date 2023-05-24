@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7693769316323141749}
   - component: {fileID: 7693769316323141748}
   - component: {fileID: -565417048103153014}
+  - component: {fileID: -439038063985825387}
   m_Layer: 0
   m_Name: X
-  m_TagString: Letra
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,3 +115,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-439038063985825387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693769316323141751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b64f11345afd24cb77ef5352201238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
