@@ -10,6 +10,7 @@ TagManager:
   - Piso
   - Letra
   - Enemigo
+  - Figura
   layers:
   - Default
   - TransparentFX

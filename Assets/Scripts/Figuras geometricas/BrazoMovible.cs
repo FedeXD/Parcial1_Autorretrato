@@ -7,13 +7,16 @@ public class BrazoMovible : MonoBehaviour
     private float velocidad = 5f; //Velocidad de movimiento del objeto
     private Vector3 posicionInicial;
     private bool clicSostenido = false; //Indica si se está sosteniendo el clic
-    private Rigidbody rb;
+    private static FixedJoint fixedJoint; // Componente FixedJoint para mantener la conexión
+    private bool agarrando = false; // Indica si estás agarrando el objeto
+    private static Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         posicionInicial = transform.position;
     }
+
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X"); 
@@ -34,8 +37,25 @@ public class BrazoMovible : MonoBehaviour
                 rb.MovePosition(posicionInicial); 
             }
         }
+       
 
         rb.MovePosition(rb.position + movement); //Mueve el objeto 
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (!agarrando && collision.gameObject.CompareTag("Figura"))
+        {
+            agarrando = true;
+
+            // Desactiva la gravedad y la detección de colisiones para evitar interacciones físicas no deseadas
+            rb.useGravity = false;
+
+            // Crea y configura el FixedJoint
+            fixedJoint = gameObject.AddComponent<FixedJoint>();
+            fixedJoint.connectedBody = collision.rigidbody;
+
+            rb.MovePosition(posicionInicial);
+        }
+    }
 }
